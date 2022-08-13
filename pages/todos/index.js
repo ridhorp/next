@@ -1,7 +1,18 @@
 import Link from "next/link";
 import styles from "../../styles/Home.module.css";
+import { useRouter } from "next/router"
 
 export default function TodoList({ todos }) {
+  const ISSERVER = typeof window === "undefined";
+  if (!ISSERVER) {
+    const user = localStorage.getItem('user')
+    const router = useRouter()
+
+    if (!user) {
+      router.push('/')
+    }
+  }
+
   return (
     <div className={styles.container}>
       <h1>This is Todo list</h1>

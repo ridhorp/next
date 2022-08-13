@@ -4,6 +4,11 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 
 export default function Home() {
+  const handleLogin = () => {
+    localStorage.setItem('user', 'ini adalah data user')
+    alert('Login Berhasil')
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -55,6 +60,7 @@ export default function Home() {
               <p>this is user list</p>
             </a>
           </Link>
+          <button onClick={handleLogin}>Login</button>
         </div>
       </main>
 
