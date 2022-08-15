@@ -5,9 +5,9 @@ import Link from "next/link";
 
 export default function Home() {
   const handleLogin = () => {
-    localStorage.setItem('user', 'ini adalah data user')
-    alert('Login Berhasil')
-  }
+    localStorage.setItem("user", "ini adalah data user");
+    alert("Login Berhasil");
+  };
 
   return (
     <div className={styles.container}>
@@ -42,12 +42,6 @@ export default function Home() {
             </a>
           </Link>
 
-          <Link href="/posts">
-            <a className={styles.card}>
-              <h2>Posts</h2>
-              <p>this is post list</p>
-            </a>
-          </Link>
           <Link href="/users">
             <a className={styles.card}>
               <h2>Users</h2>
@@ -60,8 +54,20 @@ export default function Home() {
               <p>this is user list</p>
             </a>
           </Link>
-          <button onClick={handleLogin}>Login</button>
+          <Link href="/login">
+            <a className={styles.card}>
+              <h2>Login</h2>
+              <p>this is login page</p>
+            </a>
+          </Link>
+          <Link href="/register">
+            <a className={styles.card}>
+              <h2>Register</h2>
+              <p>this is register page</p>
+            </a>
+          </Link>
         </div>
+        <button onClick={handleLogin}>Login</button>
       </main>
 
       <footer className={styles.footer}>
